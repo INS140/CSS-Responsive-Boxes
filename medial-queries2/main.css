@@ -1,3 +1,68 @@
+:root {
+  --brown-red: rgb(172, 110, 110);
+  --brickhouse: rgb(168, 57, 57);
+}
+
 body {
   background: papayawhip;
+  font-size: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template: 1fr 2fr 1fr 1fr / repeat(3, 1fr);
+  gap: 8px;
+  min-height: 100vh;
+}
+
+.container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a {
+  grid-column: span 3;
+}
+
+.a, .d {
+  background-color: indianred;
+}
+
+.b {
+  grid-column: span 3;
+}
+
+.b, .e {
+  background-color: var(--brown-red);
+}
+
+.c, .f {
+  background-color: var(--brickhouse);
+}
+
+.f {
+  grid-column: span 3;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  }
+
+  .a {
+    grid-area: 1 / span 4;
+  }
+
+  .b {
+    grid-area: 2 / span 3;
+  }
+
+  .c, .d, .e {
+    grid-row: 3;
+  }
+
+  .f {
+    grid-area: span 2 / 4;
+  }
 }

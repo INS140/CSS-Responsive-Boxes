@@ -1,4 +1,44 @@
-body {
-  background: blanchedalmond;
+:root {
+  --brown-red: rgb(172, 110, 110);
+  --brickhouse: rgb(168, 57, 57);
 }
 
+body {
+  background: blanchedalmond;
+  font-size: 3rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  min-height: 100vh;
+  gap: 8px;
+}
+
+.container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a {
+  background-color: indianred;
+}
+
+.b {
+  background-color: var(--brown-red);
+}
+
+.c {
+  background-color: var(--brickhouse);
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template: 1fr 2fr / 4fr 1fr;
+  }
+
+  .a {
+    grid-column: span 2;
+  }
+}
